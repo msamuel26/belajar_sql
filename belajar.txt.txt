@@ -1,0 +1,1 @@
+Database adalah sekumpulan informasi yang di set up sedemikian rupa supaya mudah diakses, mudah dikelola dan mudah diupdate
