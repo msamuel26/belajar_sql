@@ -1,1 +1,13 @@
-Database adalah sekumpulan informasi yang di set up sedemikian rupa supaya mudah diakses, mudah dikelola dan mudah diupdate
+Database adalah sekumpulan informasi yang di set up sedemikian rupa supaya mudah diakses, mudah dikelola dan mudah diupdate.
+
+Di dalam database, kita akan meng-kelompok-kan data yang disimpan dalam tabel masing-masing sesuai kelompoknya
+
+
+Contoh database sederhana (dalam sekolah) yaitu:
+- Teman, terdiri dari: identitas (berupa nomor yang bersifat unik), nama, tanggal lahir, nomor telpon, alamat rumah
+
+- Guru, terdiri dari: identitas (berupa nomor yang bersifat unik), nama, jenis kelamin, umur/tanggal lahir, mengajar mapel apa
+
+- Mapel, terdiri dari: identitas (berupa nomor yang bersifat unik), nama
+
+- Sepatu, terdiri dari: identitas (berupa nomor yang bersifat unik), merek, size, model
