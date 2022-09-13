@@ -11,3 +11,28 @@ Contoh database sederhana (dalam sekolah) yaitu:
 - Mapel, terdiri dari: identitas (berupa nomor yang bersifat unik), nama
 
 - Sepatu, terdiri dari: identitas (berupa nomor yang bersifat unik), merek, size, model
+
+
+
+Hari ini belajar query dengan keyword 'select'
+ dimana bisa juga memfilter atau menampilkan data tertentu yang kita inginkan
+
+
+Keyword '*' digunakan untuk menampilkan semua kolom/data dalam definisi tabel
+Contoh: select * from customers ('customers' merupakan definisi tabel)
+
+
+Kita dapat memfilter data dalam tabel dengan menggunakan keyword 'where'
+Contoh: select * from customers where first_name = 'John' 
+
+
+Multi filter yang digunakan untuk meng-query data dalam tabel
+Contoh: select * from customers where first_name = 'John' and age >= 25
+
+
+Filter suatu data dalam tabel jika ingin menampilkan umur tertentu yang berjumlah lebih dari 1 menggunakan keyword 'in'
+Contoh: select * from customers where first_name = 'John' and age in (21, 22)
+
+
+Kita dapat menampilkan data/kolom tertentu dalam isi tabel
+Contoh: select first_name, last_name, age from customers ('first_name', 'last_name' dan 'age' merupakan nama kolom dalam tabel)
