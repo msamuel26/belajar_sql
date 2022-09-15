@@ -36,3 +36,28 @@ Contoh: select * from customers where first_name = 'John' and age in (21, 22)
 
 Kita dapat menampilkan data/kolom tertentu dalam isi tabel
 Contoh: select first_name, last_name, age from customers ('first_name', 'last_name' dan 'age' merupakan nama kolom dalam tabel)
+
+
+Hari ini mempelajari fungsi max, min, sum, avg, count (hanya berlaku pada tipe data integer) dan 'group by' dalam SQL
+
+
+max()
+Contoh: select max(age) from customers (berarti menampilkan umur terbesar dalam kolom 'age' pada tabel 'customers')
+
+min()
+Contoh: select min(age) from customers (berarti menampilkan umur terkecil dalam kolom 'age' pada tabel 'customers')
+
+sum()
+Contoh: select sum(age) from customers (berarti menampilkan jumlah semua umur dalam kolom 'age' pada tabel 'customers')
+
+avg()
+Contoh: select avg(age) from customers (berarti menampilkan rata-rata dari jumlah semua umur dalam kolom 'age' pada tabel 'customers')
+
+count() dan group by (age/umur)
+Contoh: select count(*), age from customers group by age (berarti menampilkan berapa jumlah orang yang memiliki umur yang sama yang terdapat dalam kolom 'age')
+
+avg() dan group by
+Contoh: select avg(age), country from customers group by country (berarti menampilkan rata-rata umur berdasarkan orang yang negaranya sama)
+
+count() and group by (country/negara)
+Contoh: select count(*), country from customers group by country (berarti menampilkan berapa jumlah orang yang negaranya sama)
