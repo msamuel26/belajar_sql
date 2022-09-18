@@ -61,3 +61,28 @@ Contoh: select avg(age), country from customers group by country (berarti menamp
 
 count() and group by (country/negara)
 Contoh: select count(*), country from customers group by country (berarti menampilkan berapa jumlah orang yang negaranya sama)
+
+
+
+Hari ini belajar meng-query-kan multi agregat dalam 1 kali proses query (seperti sum, count, avg, min, max, dsb)
+
+Contoh: 
+
+select sum(amount), 
+	   count(*), 
+	   item 
+  from orders 
+ group by item 
+
+ (query ini artinya menghitung jumlah harga/omset item dan berapa item yang terjual)
+
+Mempelajari cara mengganti nama variabel agar dapat mudah dipahami (human-readable)
+Contoh:  
+
+select sum(amount) as jumlah_omzet, 
+       count(*) as produk_terjual, 
+       item as produk 
+  from orders 
+ group by item 
+
+ (dimana nanti hasil outputnya terdapat nama kolom 'jumlah_omzet', 'produk_terjual', dan 'produk')
