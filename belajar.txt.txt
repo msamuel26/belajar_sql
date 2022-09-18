@@ -68,9 +68,9 @@ Hari ini belajar meng-query-kan multi agregat dalam 1 kali proses query (seperti
 
 Contoh: 
 
-select sum(amount), 
-	   count(*), 
-	   item 
+select sum(amount),
+       count(*),
+       item 
   from orders 
  group by item 
 
