@@ -86,3 +86,20 @@ select sum(amount) as jumlah_omzet,
  group by item 
 
  (dimana nanti hasil outputnya terdapat nama kolom 'jumlah_omzet', 'produk_terjual', dan 'produk')
+
+
+ Mempelajari cara menggabungkan 2 tabel berdasarkan kunci tertentu, dan mengurutkan tampilan data.
+
+ Note: kita juga dapat membuat alias di nama tabel dan nama kolom yang bertujuan agar dapat mudah dipahami (human-readable)
+ 
+ Contoh:
+
+   select o.order_id,
+ 		  c.first_name as nama_depan,
+ 		  c.last_name as nama_belakang, 
+ 		  o.item as produk, 
+ 		  o.amount as harga_produk
+ 	 from customers c 
+ 	 join orders o on (o.customer_id = c.customer_id)
+ order by o.order_id
+
