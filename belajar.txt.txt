@@ -151,5 +151,5 @@ select o.order_id,
   from customers c
   join orders o on (o.customer_id = c.customer_id)
   join shippings s on (s.customer = c.customer_id)
- order by o.order_id desc
+ order by o.order_id desc 
 
