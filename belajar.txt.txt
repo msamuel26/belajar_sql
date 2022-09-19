@@ -103,3 +103,53 @@ select sum(amount) as jumlah_omzet,
      join orders o on (o.customer_id = c.customer_id)
  order by o.order_id
 
+
+
+Hari ini mempelajari multi kolom dalam group by
+Contoh:
+
+select sum(amount),
+	   count(*),
+       item,
+       customer_id
+  from orders
+ group by item, customer_id
+
+Note: bahwa group by harus mencantumkan kolom yang tidak ada di-agregat, contoh disini adalah informasi 'item' dan 'customer_id'
+
+Untuk menunjang proses belajar ini, kita dapat menambahkan data dalam tabel orders dengan perintah 'insert into', sebagai berikut:
+
+  insert into orders (order_id, item, amount, customer_id) values (6, 'Keyboard', 500, 4);
+  insert into orders (order_id, item, amount, customer_id) values (7, 'Keyboard', 550, 4);
+  insert into orders (order_id, item, amount, customer_id) values (8, 'Keyboard', 600, 4);
+
+
+Mempelajari multi join (menggabungkan multi tabel), dan multi order by
+Contoh:
+
+select o.order_id,
+       c.first_name as nama_depan,
+       c.last_name as nama_belakang,
+       o.item as produk,
+       o.amount as harga_produk,
+       s.status as status_pengiriman
+  from customers c
+  join orders o on (o.customer_id = c.customer_id)
+  join shippings s on (s.customer = c.customer_id)
+ order by c.first_name, c.last_name
+
+
+Mempelajari desc (descending), yaitu membalikkan urutan
+Contoh:
+
+select o.order_id,
+       c.first_name as nama_depan,
+       c.last_name as nama_belakang,
+       o.item as produk,
+       o.amount as harga_produk,
+       s.status as status_pengiriman
+  from customers c
+  join orders o on (o.customer_id = c.customer_id)
+  join shippings s on (s.customer = c.customer_id)
+ order by o.order_id desc
+
