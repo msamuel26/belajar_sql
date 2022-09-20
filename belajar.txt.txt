@@ -153,3 +153,25 @@ select o.order_id,
   join shippings s on (s.customer = c.customer_id)
  order by o.order_id desc 
 
+
+
+ C - Create (Insert into)
+ R - Read (Select)
+ U - Update (Update)
+ D - Delete (Delete) 
+
+Hari ini mempelajari C - Create (insert into) 
+Contoh:
+
+insert into customers (customer_id, first_name, last_name, age, country) values (6, 'Setipi', 'Cinguri', 7, 'ID');
+insert into customers (customer_id, first_name, last_name, age, country) values (7, 'McPout', 'Nut', 45, 'ID');
+
+(dengan rumus 'insert into' nama tabel (nama kolom yang diinginkan) values (isi kolom sesuai urutan)) 
+
+
+insert into orders (order_id, item, amount, customer_id) values (6, 'CPU', 2500, 6);
+insert into orders (order_id, item, amount, customer_id) values (7, 'Bag', 1000, 7);
+
+
+insert into shippings (shipping_id, status, customer) values (6, 'Delivered', 6);
+insert into shippings (shipping_id, status, customer) values (7, 'Pending', 7);
