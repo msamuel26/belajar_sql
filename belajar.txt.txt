@@ -175,3 +175,43 @@ insert into orders (order_id, item, amount, customer_id) values (7, 'Bag', 1000,
 
 insert into shippings (shipping_id, status, customer) values (6, 'Delivered', 6);
 insert into shippings (shipping_id, status, customer) values (7, 'Pending', 7);
+
+
+
+Hari ini mempelajari agregat distinct() yaitu menampilkan data yang tidak duplikat (sama seperti fungsi set() di python)
+Contoh:
+
+select distinct(country)
+  from customers
+
+
+Mempelajari keyword 'limit' dan 'offset'
+Contoh:
+
+select * 
+  from customers
+ order by order_id
+ limit 3 offset 4
+
+('limit 3 offset 4' yaitu berarti menampilkan sebanyak 3 data saja setelah id 4), hasilnya yaitu menampilkan id 5, 6, 7 dari tabel 'customers'
+
+
+Mempelajari syntax U - Update (meng-update/mengubah data)
+Contoh:
+
+update orders 
+   set amount = 700
+ where item = 'Keyboard'
+
+(berarti mengubah isi kolom 'amount' menjadi bernilai 700 dimana itemnya 'Keyboard')
+
+Note: hati-hati saat melakukan 'update', harus terdapat klausul 'where', karena jika tidak, maka seluruh data dalam tabel akan diupdate 
+
+
+Mempelajari syntx D - Delete (menghapus data)
+Contoh:
+
+delete from customers 
+ where country = 'USA'
+
+(berarti menghapus baris/data dimana terdapat kolom country yang berisi 'USA' pada tabel)
