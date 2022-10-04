@@ -215,3 +215,39 @@ delete from customers
  where country = 'USA'
 
 (berarti menghapus baris/data dimana terdapat kolom country yang berisi 'USA' pada tabel)
+
+
+
+Hari ini mempelajari cara membuat tabel baru (create table)
+Contoh:
+
+create table product_template 
+(
+	id integer,
+	name varchar(100),
+	sequence integer,
+	description varchar(100)
+);
+
+(berarti membuat tabel bernama 'product_template' dengan isi kolom 'id' tipe data: integer, kolom 'name' tipe data: varchar(100), kolom 'sequence' tipe data integer, dan kolom 'description' tipe data: varchar(100))
+
+
+insert into product_template (id, name, sequence, description) values (1, 'Sneaker', 9, 'Testing');
+insert into product_template (id, name, sequence, description) values (2, 'Mouse', 10, 'Testing');
+insert into product_template (id, name, sequence, description) values (3, 'Screen', 11, 'Testing');
+
+
+insert data dengan value description 'null' atau kosong
+contoh:
+
+insert into product_template (id, name, sequence, description) values (4, 'Sneaker', 9, Null);
+insert into product_template (id, name, sequence, description) values (5, 'Mouse', 10, Null);
+insert into product_template (id, name, sequence, description) values (6, 'Screen', 11, Null);
+
+
+insert data dengan tidak mengisi salah satu kolom yaitu 'description', maka nanti hasil data pada 'description' akan kosong
+contoh:
+
+insert into product_template (id, name, sequence) values (4, 'Sneaker', 9);
+insert into product_template (id, name, sequence) values (5, 'Mouse', 10);
+insert into product_template (id, name, sequence) values (6, 'Screen', 11);
