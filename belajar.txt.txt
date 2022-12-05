@@ -251,3 +251,11 @@ contoh:
 insert into product_template (id, name, sequence) values (4, 'Sneaker', 9);
 insert into product_template (id, name, sequence) values (5, 'Mouse', 10);
 insert into product_template (id, name, sequence) values (6, 'Screen', 11);
+
+
+
+Hari ini belajar meng-install database SQLite di local komputer ditaruh di folder 'SQLite' C:\Users\msamu\SQLite\data\data.lite
+
+Meng-install tools DBeaver untuk memanipulasi database, membuat tabel dengan perintah Create Table dan manajemen (CRUD), yaitu Create (Insert Into), Read (Select), Update (Update), Delete (Delete)
+
+Mengoneksikan ke database SQLite dengan cara: klik kanan, Create, Connection, pilih 'SQLite', path-nya diarahkan ke file database (contoh di lokal komputer nama databasenya adalah 'C:\Users\msamu\SQLite\data\data.lite'), klik 'Finish'
