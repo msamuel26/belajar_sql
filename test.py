@@ -58,7 +58,7 @@ session.commit()
 
 # Query database untuk mengambil data yang diinginkan dari tabel "people"
 #  (dibawah ini bertujuan mencari data/kolom dalam "Person" yang firstname nya 
-#    berisi awalan 'M' dan akhiran 'e')
+#    berisi awalan 'A' dan akhiran 'a')
 results = session.query(Person).filter(Person.firstname.like("A%a"))
 for r in results:
     print(r)
