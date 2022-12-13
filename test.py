@@ -6,6 +6,7 @@
 from sqlalchemy import create_engine, ForeignKey, Column, String, Integer, CHAR
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy import delete
 
 # Membuat sebuah class declarative base 
 Base = declarative_base()
@@ -41,6 +42,11 @@ Base.metadata.create_all(bind=engine)
 # Membuat sebuah session untuk berinteraksi dengan database (create a session to interact with the database)
 Session = sessionmaker(bind=engine)
 session = Session()
+
+# Bertujuan untuk menghapus data di tabel yang "ssn" nya lebih dari 0
+x = session.query(Person).filter(Person.ssn > 0).\
+    delete()
+session.commit()
 
 # Masukkan data yang ingin dimasukkkan pada tabel database, lalu di commit 
 person = Person(12312, "Mike", "Smith", "m", 35)
