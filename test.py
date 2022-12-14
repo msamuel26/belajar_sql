@@ -78,6 +78,6 @@ for r in results:
 new = update(Person).where(Person.ssn == 12312).values(age=40)
 result = engine.execute(new)
 
-# Person.firstname.like("B%") berarti data dalam "Person" yang firstname nya berawalan 'B'
+# Person.firstname.like("B%") berarti mencari data dalam "Person" yang firstname nya berawalan 'B'
 new1 = update(Person).where(Person.firstname.like("B%")).values(firstname='Michael')
 result1 = engine.execute(new1)
