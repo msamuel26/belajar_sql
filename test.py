@@ -7,6 +7,7 @@ from sqlalchemy import create_engine, ForeignKey, Column, String, Integer, CHAR
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import delete
+from sqlalchemy import update 
 
 # Membuat sebuah class declarative base 
 Base = declarative_base()
@@ -71,3 +72,12 @@ for r in results:
 
 # Operator like() bertujuan untuk mencari pola tertentu dalam kolom,
 #  contoh-contoh lainnya dapat kunjungi: https://www.geeksforgeeks.org/python-mysql-like-operator/
+
+
+# Mempelajari update data dalam database SQL menggunakan SQLAlchemy di Python
+new = update(Person).where(Person.ssn == 12312).values(age=40)
+result = engine.execute(new)
+
+# Person.firstname.like("B%") berarti data dalam "Person" yang firstname nya berawalan 'B'
+new1 = update(Person).where(Person.firstname.like("B%")).values(firstname='Michael')
+result1 = engine.execute(new1)
