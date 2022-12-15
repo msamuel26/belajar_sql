@@ -50,6 +50,11 @@ x = session.query(Person).filter(Person.ssn > 0).\
     delete()
 session.commit()
 
+# 2022-12-15 20:12:02,900 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+# 2022-12-15 20:12:02,901 INFO sqlalchemy.engine.Engine DELETE FROM people WHERE people.ssn > ?  
+# 2022-12-15 20:12:02,901 INFO sqlalchemy.engine.Engine [generated in 0.00029s] (0,)
+# 2022-12-15 20:12:02,903 INFO sqlalchemy.engine.Engine COMMIT
+
 
 # Masukkan data yang ingin dimasukkkan pada tabel database, lalu di commit
 print("[Insert 1 record]")
