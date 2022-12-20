@@ -46,6 +46,7 @@ session.add(new_customer1)
 session.add(new_customer2)
 session.add(new_customer3)
 session.add(new_customer4)
+session.commit()
 
 # 2022-12-20 12:01:09,573 INFO sqlalchemy.engine.Engine BEGIN (implicit)
 # 2022-12-20 12:01:09,573 INFO sqlalchemy.engine.Engine INSERT INTO customer (first_name, last_name, age, country) VALUES (?, ?, ?, ?)
