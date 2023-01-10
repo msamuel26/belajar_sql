@@ -3,6 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # Set up the database
+# echo=True berarti akan menampilkan semua statement/pernyataan SQL yang dihasilkan 
 engine = create_engine('postgresql://postgres:postgres@localhost:5432/moses', echo=True)
 Base = declarative_base()
 
