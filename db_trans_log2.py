@@ -52,7 +52,6 @@ session.commit()
 def log_entries(func):
     def wrapper(*args):
         result = func(*args)
-        print(args[0].id)
         y = trans_log(account_id=args[0].id, amount=args[1], balance=result)
         session.add(y)
         return result
