@@ -1,0 +1,8 @@
+Macam-macam metode HTTP:
+a. GET: mengambil informasi tentang sebuah resource (sumber daya). Metode ini paling sering digunakan untuk mengambil informasi dari server
+b. POST: mengirimkan informasi untuk diproses oleh sumber daya yang ditentukan oleh URI. Metode ini biasanya digunakan untuk mengirimkan form HTML.
+c. PUT: mengganti semua representasi saat ini dari sumber daya target dengan payload permintaan
+d. DELETE: menghapus resource (sumber daya) yang ditentukan
+e. PATCH: menerapkan modifikasi parsial pada resource (sumber daya)
+f. HEAD: sama saja dengan GET tetapi hanya mengembalikan header dari respons, bukan konten aktual
+g. OPTIONS: mendeskripsikan pilihan komunikasi untuk sumber daya target (target resource)
