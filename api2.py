@@ -9,7 +9,7 @@ from fastapi.responses import JSONResponse
 app = FastAPI()
 
 # Connect to the PostgreSQL database
-engine = create_engine('postgresql://postgres:postgres@localhost:5432/api', echo=True)
+engine = create_engine('postgresql://postgres:postgres@localhost:5432/api2', echo=True)
 Base = declarative_base()
 
 # Create a Pydantic model for the Customer
@@ -19,7 +19,13 @@ class CustomerCreate(BaseModel):
     age: int = Field(..., example=23)
     country: str = Field(..., example='USA')
 
-# Create a SQLAlchemy model for the User
+# Create a Pydantic model for the Order
+class OrderCreate(BaseModel):
+    item: str = Field(..., example="Keyboard")
+    amount: int = Field(..., example=300)
+    customer_id: int = Field(..., example=1)
+
+# Create a SQLAlchemy model for the Customer
 class Customer(Base):
     __tablename__ = "customers"
     id = Column(Integer, primary_key=True, index=True)
@@ -27,6 +33,14 @@ class Customer(Base):
     last_name = Column(String)
     age = Column(Integer)
     country = Column(String)
+
+# Create a SQLAlchemy model for the Order
+class Order(Base):
+    __tablename__ = "orders"
+    id = Column(Integer, primary_key=True, index=True)
+    item = Column(String)
+    amount = Column(Integer)
+    customer_id = Column(Integer)
 
 # Create the "users" table in the database
 Base.metadata.create_all(bind=engine)
@@ -44,6 +58,16 @@ async def create_customer(customer: CustomerCreate):
     session.close()
     return {"message": "Customer created successfully"}
 
+# Define a route to create a new order in the database
+@app.post("/orders/") 
+async def create_order(order: OrderCreate):
+    session = SessionLocal()
+    new_order = Order(**order.dict())
+    session.add(new_order)
+    session.commit()
+    session.close()
+    return {"message": "Order created successfully"}
+
 # Define a route to list all customers from the database
 @app.get("/customers/", response_class=JSONResponse)
 async def list_customers():
@@ -51,6 +75,14 @@ async def list_customers():
     customers = session.query(Customer).all()
     session.close()
     return JSONResponse(content= [{"id": customer.id, "first_name": customer.first_name, "last_name": customer.last_name, "age": customer.age, "country": customer.country} for customer in customers])
+
+# Define a route to list all orders from the database
+@app.get("/orders/", response_class=JSONResponse)
+async def list_orders():
+    session = SessionLocal()
+    orders = session.query(Order).all()
+    session.close()
+    return JSONResponse(content= [{"id": order.id, "item": order.item, "amount": order.amount, "customer_id": order.customer_id} for order in orders])
 
 @app.get("/")
 async def root():
