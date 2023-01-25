@@ -1,0 +1,23 @@
+JSON adalah sebuah format data ringan yang mudah dibaca dan ditulis oleh manusia 
+dan mudah diproses dan digenerate oleh mesin.
+
+Data JSON diwakili sebagai kumpulan pasangan key-value, di mana key adalah string dan 
+valuenya dapat berupa string, angka, boolean, array, atau objek.
+
+Contoh JSON:
+
+{
+    "nama": "John Smith",
+    "umur": 35,
+    "statusPekerjaan": true,
+    "alamat": {
+        "jalan": "123 Main St",
+        "kota": "Anytown",
+        "negara": "CA",
+        "kodepos": "12345"
+    },
+    "nomorTelepon": [
+        "555-555-5555",
+        "555-555-5556"
+    ]
+}
