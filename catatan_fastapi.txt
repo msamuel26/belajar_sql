@@ -1,0 +1,6 @@
+Uvicorn yang dieksekusi di Anaconda Powershell Prompt, 
+Contoh: uvicorn api3:aplikasi --host 0.0.0.0 --port 80 --reload
+
+"api3" merupakan nama file, dan "aplikasi" merupakan nama variabel dari FastAPI() yang berada di file api3 (aplikasi = FastAPI())
+
+Untuk meng-akses web API: http://localhost/docs#/
