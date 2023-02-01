@@ -4,3 +4,38 @@ Contoh: uvicorn api3:aplikasi --host 0.0.0.0 --port 80 --reload
 "api3" merupakan nama file, dan "aplikasi" merupakan nama variabel dari FastAPI() yang berada di file api3 (aplikasi = FastAPI())
 
 Untuk meng-akses web API: http://localhost/docs#/
+
+select c.first_name,
+	   c.last_name,
+	   o.item,
+	   o.amount,
+	   s.status
+  from shippings s
+  join orders o on (o.customer_id = c.id)
+  join customers c on (c.id = s.customer_id)
+ where o.id = 3
+
+Pada kode tersebut, akan menghasilkan error dibawah ini:
+
+SQL Error [42P01]: ERROR: missing FROM-clause entry for table "c"
+
+Hal tersebut terjadi karena "c.id" yang berada di "join orders" diketik sebelum definisi aliasing
+"customers c" terbentuk/dibuat 
+
+
+Untuk membuat sistem menjadi lebih baik/cepat, maka penggunaan index yang benar diperlukan.
+Index adalah sebuah objek dalam sistem database yang dapat mempercepat proses pencarian (query) data
+
+Contoh pembuatan index di kolom "id" di tabel "orders":
+
+CREATE TABLE public.orders (
+	id serial4 NOT NULL,
+	item varchar NULL,
+	amount int4 NULL,
+	customer_id int4 NULL,
+	CONSTRAINT orders_pkey PRIMARY KEY (id)
+);
+CREATE INDEX ix_orders_id ON public.orders USING btree (id);
+
+
+Untuk mengetahui contoh-contoh projek suatu topik, bisa menggunakan query Google: Github Awesome FastAPI Project
