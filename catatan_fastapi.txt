@@ -39,3 +39,10 @@ CREATE INDEX ix_orders_id ON public.orders USING btree (id);
 
 
 Untuk mengetahui contoh-contoh projek suatu topik, bisa menggunakan query Google: Github Awesome FastAPI Project
+
+
+Hari ini belajar:
+1. Git clone project dari github (mengambil source code dari github punya orang lain)
+2. Memisahkan isi kode menjadi beberapa file: database.py, models.py, main.py
+3. Menampilkan data menggunakan Jinja template agar bisa diakses di web browser
+4. Akses ke web sudah bisa dilakukan, begitu juga docs-nya 
