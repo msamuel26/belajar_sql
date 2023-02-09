@@ -46,3 +46,49 @@ Hari ini belajar:
 2. Memisahkan isi kode menjadi beberapa file: database.py, models.py, main.py
 3. Menampilkan data menggunakan Jinja template agar bisa diakses di web browser
 4. Akses ke web sudah bisa dilakukan, begitu juga docs-nya 
+
+
+Hari ini memahami tentang offset dan limit 
+
+Contoh: select * from customers c 
+			   offset 4
+			   limit 2
+
+Berikut ini adalah hasil dari "select * from customers c":
+
+1	John	Doe		23	USA
+2	Mc		Pout	45	IDN
+3	Nyir	Cengir	 7	IDN
+4	Mami	Setip	37	IDN
+5	Boboy	Bagunge	21	IDN
+6	John	Prut	23	USA
+7	Mak e	Ngomel	45	IDN
+10	Mixue	Doe		23	CHN
+
+
+Kemudian hasil dari "select * from customers c limit 3":
+1	John	Doe		23	USA
+2	Mc		Pout	45	IDN
+3	Nyir	Cengir	 7	IDN
+
+
+Kemudian hasil dari "select * from customers c offset 2":
+3	Nyir	Cengir	 7	IDN
+4	Mami	Setip	37	IDN
+5	Boboy	Bagunge	21	IDN
+6	John	Prut	23	USA
+7	Mak e	Ngomel	45	IDN
+10	Mixue	Doe		23	CHN
+
+Berikut ini adalah hasil query (offset 4 limit 2):
+
+select * from customers c 
+			   offset 4
+			   limit 2
+
+Hasil:
+5	Boboy	Bagunge	21	IDN
+6	John	Prut	23	USA
+
+Kode tersebut berarti: mengabaikan 4 data awal, setelah itu menampilkan 2 data selanjutnya
+						(yaitu data ke-5 dan ke-6)
