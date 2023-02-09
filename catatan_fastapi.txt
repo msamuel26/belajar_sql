@@ -51,8 +51,8 @@ Hari ini belajar:
 Hari ini memahami tentang offset dan limit 
 
 Contoh: select * from customers c 
-			   offset 4
-			   limit 2
+			offset 4
+			limit 2
 
 Berikut ini adalah hasil dari "select * from customers c":
 
@@ -83,8 +83,8 @@ Kemudian hasil dari "select * from customers c offset 2":
 Berikut ini adalah hasil query (offset 4 limit 2):
 
 select * from customers c 
-			   offset 4
-			   limit 2
+			offset 4
+			limit 2
 
 Hasil:
 5	Boboy	Bagunge	21	IDN
