@@ -92,3 +92,24 @@ Hasil:
 
 Kode tersebut berarti: mengabaikan 4 data awal, setelah itu menampilkan 2 data selanjutnya
 						(yaitu data ke-5 dan ke-6)
+
+
+Hari ini mempelajari async (asynchronous) dan sync (synchronous)
+
+Tujuan dari fungsi async adalah untuk memungkinkan server untuk menangani banyak permintaan secara 
+bersamaan tanpa menunggu satu permintaan selesai sebelum memulai yang berikutnya.
+
+Sync berjalan dalam urutan yang dipanggil dan memblokir sampai mereka mengembalikan hasil
+
+Untuk performa yang lebih baik, disarankan menggunakan fungsi async untuk operasi I/O-bound, seperti mengambil data dari API eksternal, 
+dan menggunakan fungsi synchronous untuk operasi CPU-bound, seperti pemrosesan data.
+
+Contoh I/O-bound dalam dunia nyata (analogi):
+
+Menerima perintah dari orang tua untuk melakukan aktivitas menyapu rumah, hal tersebut merupakan I/O bound
+karena menerima perintah dan melakukan aktivitas yang memakan waktu
+
+
+Contoh CPU-bound dalam dunia nyata (analogi):
+
+Menjawab pertanyaan "5 x 5"
