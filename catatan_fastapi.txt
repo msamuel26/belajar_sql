@@ -113,3 +113,15 @@ karena menerima perintah dan melakukan aktivitas yang memakan waktu
 Contoh CPU-bound dalam dunia nyata (analogi):
 
 Menjawab pertanyaan "5 x 5"
+
+
+Hari ini mempelajari tentang konsep database transaction. 
+
+Atomicity: sifat ini menjamin bahwa transaksi database akan dilakukan secara keseluruhan atau tidak sama sekali.
+Dengan kata lain, jika salah satu perintah dalam transaksi mengalami kegagalan, maka seluruh transaksi akan dibatalkan
+dan database akan dikembalikan ke kondisi sebelumnya.
+
+Contoh implementasi database transaction dalam hal sederhana, yaitu kesepakatan mencari tempat untuk makan.
+1. Bapak dan Adek ingin makan di Lek Owi, sedangkan Ibu tidak mau. Sehingga status gagal dan tidak jadi 
+	makan di Lek Owi
+2. Ibu ingin makan di Pak Surip, Bapak dan Adek oke. Maka, status berhasil dan jadi makan di Pak Surip
