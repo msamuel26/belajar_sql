@@ -125,3 +125,47 @@ Contoh implementasi database transaction dalam hal sederhana, yaitu kesepakatan 
 1. Bapak dan Adek ingin makan di Lek Owi, sedangkan Ibu tidak mau. Sehingga status gagal dan tidak jadi 
 	makan di Lek Owi
 2. Ibu ingin makan di Pak Surip, Bapak dan Adek oke. Maka, status berhasil dan jadi makan di Pak Surip
+
+
+
+Hari ini mempelajari pydantic yang digunakan sebagai cara untuk 2 validasi
+
+1. Validasi yang memastikan bahwa amount yang akan dikirim dari rekening satu ke rekening lain harus lebih dari 0 atau tidak boleh negatif
+	(yang berada di "schemas.transfer")
+
+	from pydantic import BaseModel, validator
+
+	# Create a Pydantic model for the Order
+	class TransferInfo(BaseModel):
+    	from_account_id: int
+    	to_account_id: int
+    	amount: int
+		
+		@validator('amount')
+		def amount_must_be_positive(cls, value):
+			if value < 0:
+				raise ValueError('Nilai harus positif')
+			return value
+
+2. Validasi yang memastikan bahwa saldo (balance) suatu rekening tidak boleh lebih kecil dari 0 atau tidak boleh negatif
+	(yang berada di "schemas.account")
+
+	from pydantic import BaseModel, Field, validator
+
+	# Create a Pydantic model for the Order
+	class AccountInfo(BaseModel):
+    	account_number: str = Field(..., example="1039009900")
+    	balance: int = Field(..., example=2500)
+    	customer_id: int = Field(..., example=1)
+
+    	@validator('balance')
+    	def balance_must_be_positive(cls, value):
+        	if value < 0:
+            	raise ValueError('Balance harus positif')
+        	return value
+
+    	class Config:
+        	orm_mode = True
+
+	class AccountInfoID(AccountInfo):
+		id: int
