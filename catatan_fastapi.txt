@@ -169,3 +169,14 @@ Hari ini mempelajari pydantic yang digunakan sebagai cara untuk 2 validasi
 			
 	class AccountInfoID(AccountInfo):
 		id: int
+
+
+Pada folder "fastapi-trans" yang berada di "msamuel26/programming" terdapat beberapa subfolder dan masing-masing memiliki tujuan yaitu:
+1. "extensions" digunakan untuk koneksi ke database
+2. "models" digunakan untuk definisi tabel
+3. "schemas" berisi kode-kode pydantic yang melakukan validasi tipe data setiap Field dan bisa melakukan validasi isi di Field tersebut (batasan nilai)
+	Contoh: untuk batasan nilai di Field Balance tidak boleh lebih kecil dari 0
+4. "services" untuk menaruh kode-kode yang berkaitan dengan business process
+5. "repositories" berisi standard CRUD
+6. "decorators" digunakan untuk mem-bundling proses database transactionalnya
+7. "api" berisi kode yang digunakan untuk berkomunikasi dengan sistem lain (dalam format JSON)
