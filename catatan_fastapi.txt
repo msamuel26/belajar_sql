@@ -180,3 +180,7 @@ Pada folder "fastapi-trans" yang berada di "msamuel26/programming" terdapat bebe
 5. "repositories" berisi standard CRUD
 6. "decorators" digunakan untuk mem-bundling proses database transactionalnya
 7. "api" berisi kode yang digunakan untuk berkomunikasi dengan sistem lain (dalam format JSON)
+
+
+Untuk melihat dokumentasi resmi tentang Pydantic, 
+	kunjungi: https://pydantic-docs.helpmanual.io/
